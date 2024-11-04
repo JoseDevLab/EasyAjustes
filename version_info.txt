@@ -1,0 +1,28 @@
+VSVersionInfo(
+    ffi=FixedFileInfo(
+        filevers=(1, 1, 0, 0),
+        prodvers=(1, 1, 0, 0),
+        mask=0x3f,
+        flags=0x0,
+        OS=0x40004,
+        fileType=0x1,
+        subtype=0x0,
+        date=(0, 0)
+    ),
+    kids=[
+        StringFileInfo(
+            [
+                StringTable(
+                    '0C0A04B0',  # Español (Códigos LCID: 0C0A = español, 04B0 = UTF-16)
+                    [StringStruct('CompanyName', 'Easy Ajustes'),
+                     StringStruct('FileDescription', 'Easy Ajustes'),
+                     StringStruct('FileVersion', '1.1.0.0'),
+                     StringStruct('InternalName', 'Easy Ajustes'),
+                     StringStruct('LegalCopyright', 'Copyright 2024 Jose Leonardo Villamizar Reyes'),
+                     StringStruct('OriginalFilename', 'Easy Ajustes.exe'),
+                     StringStruct('ProductName', 'Easy Ajustes'),
+                     StringStruct('ProductVersion', '1.1.0.0')])
+            ]),
+        VarFileInfo([VarStruct('Translation', [3082, 1200])])  # Español (España), UTF-16
+    ]
+)

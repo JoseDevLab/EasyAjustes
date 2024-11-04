@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>474</width>
+    <height>434</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Acerca de Easy Ajustes</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog{
+background-color:rgb(25, 42, 63)
+}
+QLabel{
+color:white;
+font: 12pt &quot;Segoe UI&quot;;
+}
+QLabel#titulo{
+font: 600 30pt &quot;Lucida Bright&quot;;
+}
+QLabel#metaInfo{
+font: 10pt &quot;Segoe UI&quot;;
+}
+QPushButton#bt_linkedIn{
+	border-radius:8px;
+	font: 12pt &quot;Arial&quot;;
+	color:rgb(255, 255, 254);
+	border:None;
+	background-color: None;
+}
+QPushButton#bt_linkedIn:hover{
+	border-radius:12px;
+	font: 12pt &quot;Arial&quot;;
+	color:rgb(0,51, 102);
+	background-color: white;
+}
+QFrame#frame{
+	background-color: rgba(0,0,0,0);
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="titulo">
+        <property name="text">
+         <string>Easy Ajustes</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>150</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>La aplicación Easy Ajustes es una herramienta diseñada para facilitar la creación de ajustes, lo cual consiste en copiar archivos de un lugar y pegarlos en otro conservando parte del directorio original.
+
+Esta aplicación se desarrolló sin ánimo de lucro y cualquier comercio o cobro alrededor de la mísma, esta prohibido.</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="metaInfo">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Nombre:&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; Easy Ajustes&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Versión:&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; 1.1.0.0&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Copyright: &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;© &lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Jose Leonardo Villamizar Reyes&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Última revisión:&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; 25 de octubre del 2024&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Idioma:&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; Español (España, internacional)&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Desarrollado por:&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; Jose Leonardo Villamizar Reyes&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>LinkedIn</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="bt_linkedIn">
+          <property name="text">
+           <string>https://www.linkedin.com/in/joselvillamizar</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../resources.qrc">
+            <normaloff>:/icons/resources/images/Linkedin.svg</normaloff>:/icons/resources/images/Linkedin.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>25</width>
+            <height>25</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::StandardButton::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>Dialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>Dialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

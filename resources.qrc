@@ -1,0 +1,23 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>resources/images/empty.svg</file>
+    <file>resources/images/clean.svg</file>
+    <file>resources/images/sign_out.svg</file>
+    <file>resources/images/list.svg</file>
+    <file>resources/images/new.svg</file>
+    <file>resources/images/adjust.svg</file>
+    <file>resources/images/folder.svg</file>
+    <file>resources/images/load.svg</file>
+    <file>resources/images/back.svg</file>
+    <file>resources/images/next.svg</file>
+    <file>resources/images/open.svg</file>
+    <file>resources/images/icono.png</file>
+    <file>resources/images/flecha.svg</file>
+    <file>resources/images/check.svg</file>
+    <file>resources/images/check.png</file>
+    <file>resources/images/red_x.png</file>
+    <file>resources/images/red_x.svg</file>
+    <file>resources/images/info.svg</file>
+    <file>resources/images/Linkedin.svg</file>
+  </qresource>
+</RCC>
