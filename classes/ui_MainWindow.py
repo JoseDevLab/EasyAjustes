@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainWindowgMkQLr.ui'
+## Form generated from reading UI file 'MainWindowWhYksj.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.3
 ##
@@ -267,8 +267,8 @@ class Ui_EasyAjustes(object):
 
         self.leSigla = QLineEdit(self.frame_2)
         self.leSigla.setObjectName(u"leSigla")
-        self.leSigla.setMinimumSize(QSize(60, 0))
-        self.leSigla.setMaximumSize(QSize(60, 16777215))
+        self.leSigla.setMinimumSize(QSize(50, 0))
+        self.leSigla.setMaximumSize(QSize(50, 16777215))
         self.leSigla.setMaxLength(3)
         self.leSigla.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.leSigla.setClearButtonEnabled(False)
@@ -283,8 +283,8 @@ class Ui_EasyAjustes(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.cbSiglas.sizePolicy().hasHeightForWidth())
         self.cbSiglas.setSizePolicy(sizePolicy)
-        self.cbSiglas.setMinimumSize(QSize(60, 0))
-        self.cbSiglas.setMaximumSize(QSize(60, 16777215))
+        self.cbSiglas.setMinimumSize(QSize(50, 0))
+        self.cbSiglas.setMaximumSize(QSize(50, 16777215))
 
         self.horizontalLayout.addWidget(self.cbSiglas)
 
@@ -461,6 +461,7 @@ class Ui_EasyAjustes(object):
 
         self.gridLayout_2.addWidget(self.lbInicial, 0, 0, 1, 3)
 
+        self.gridLayout_2.setColumnStretch(0, 1)
 
         self.verticalLayout_8.addWidget(self.frame_7)
 
@@ -468,27 +469,48 @@ class Ui_EasyAjustes(object):
         self.frame_6.setObjectName(u"frame_6")
         self.frame_6.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame_6.setFrameShadow(QFrame.Shadow.Raised)
-        self.verticalLayout_5 = QVBoxLayout(self.frame_6)
-        self.verticalLayout_5.setSpacing(4)
-        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.verticalLayout_5.setContentsMargins(-1, 4, -1, 4)
-        self.lbDestino = QLabel(self.frame_6)
-        self.lbDestino.setObjectName(u"lbDestino")
-        self.lbDestino.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.verticalLayout_5.addWidget(self.lbDestino)
-
+        self.gridLayout_4 = QGridLayout(self.frame_6)
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.gridLayout_4.setVerticalSpacing(2)
+        self.gridLayout_4.setContentsMargins(-1, 4, -1, 4)
         self.btSelecDest = QPushButton(self.frame_6)
         self.btSelecDest.setObjectName(u"btSelecDest")
 
-        self.verticalLayout_5.addWidget(self.btSelecDest)
+        self.gridLayout_4.addWidget(self.btSelecDest, 1, 0, 1, 1)
+
+        self.chbComprimir = QCheckBox(self.frame_6)
+        self.chbComprimir.setObjectName(u"chbComprimir")
+        self.chbComprimir.setChecked(True)
+
+        self.gridLayout_4.addWidget(self.chbComprimir, 1, 1, 1, 1)
+
+        self.cbFormato = QComboBox(self.frame_6)
+        self.cbFormato.addItem("")
+        self.cbFormato.addItem("")
+        self.cbFormato.addItem("")
+        self.cbFormato.addItem("")
+        self.cbFormato.addItem("")
+        self.cbFormato.setObjectName(u"cbFormato")
+        sizePolicy.setHeightForWidth(self.cbFormato.sizePolicy().hasHeightForWidth())
+        self.cbFormato.setSizePolicy(sizePolicy)
+        self.cbFormato.setMinimumSize(QSize(110, 0))
+        self.cbFormato.setMaximumSize(QSize(50, 16777215))
+
+        self.gridLayout_4.addWidget(self.cbFormato, 1, 2, 1, 1)
 
         self.leDirecSelec = QLineEdit(self.frame_6)
         self.leDirecSelec.setObjectName(u"leDirecSelec")
         self.leDirecSelec.setReadOnly(True)
 
-        self.verticalLayout_5.addWidget(self.leDirecSelec)
+        self.gridLayout_4.addWidget(self.leDirecSelec, 2, 0, 1, 3)
 
+        self.lbDestino = QLabel(self.frame_6)
+        self.lbDestino.setObjectName(u"lbDestino")
+        self.lbDestino.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.gridLayout_4.addWidget(self.lbDestino, 0, 0, 1, 3)
+
+        self.gridLayout_4.setColumnStretch(0, 1)
 
         self.verticalLayout_8.addWidget(self.frame_6)
 
@@ -741,11 +763,24 @@ class Ui_EasyAjustes(object):
         self.chbIncluirCarp.setText(QCoreApplication.translate("EasyAjustes", u"Incluir\n"
 "carpeta", None))
         self.lbInicial.setText(QCoreApplication.translate("EasyAjustes", u"Carpeta inicial", None))
-        self.lbDestino.setText(QCoreApplication.translate("EasyAjustes", u"Carpeta destino", None))
 #if QT_CONFIG(statustip)
         self.btSelecDest.setStatusTip(QCoreApplication.translate("EasyAjustes", u"Seleccionar d\u00f3nde guardar el ajuste.", None))
 #endif // QT_CONFIG(statustip)
         self.btSelecDest.setText(QCoreApplication.translate("EasyAjustes", u"Seleccionar", None))
+        self.chbComprimir.setText(QCoreApplication.translate("EasyAjustes", u"Comprimir\n"
+"carpeta", None))
+        self.cbFormato.setItemText(0, QCoreApplication.translate("EasyAjustes", u"ZIP (.zip)", None))
+        self.cbFormato.setItemText(1, QCoreApplication.translate("EasyAjustes", u"TAR (.tar)", None))
+        self.cbFormato.setItemText(2, QCoreApplication.translate("EasyAjustes", u"GZIP (.tar.gz)", None))
+        self.cbFormato.setItemText(3, QCoreApplication.translate("EasyAjustes", u"BZIP2 (.tar.bz2)", None))
+        self.cbFormato.setItemText(4, QCoreApplication.translate("EasyAjustes", u"XZ (.tar.xz)", None))
+
+#if QT_CONFIG(tooltip)
+        self.cbFormato.setToolTip(QCoreApplication.translate("EasyAjustes", u"Formato", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(statustip)
+        self.cbFormato.setStatusTip(QCoreApplication.translate("EasyAjustes", u"Formato a comprimir.", None))
+#endif // QT_CONFIG(statustip)
 #if QT_CONFIG(tooltip)
         self.leDirecSelec.setToolTip(QCoreApplication.translate("EasyAjustes", u"Directorio seleccionado.", None))
 #endif // QT_CONFIG(tooltip)
@@ -753,6 +788,7 @@ class Ui_EasyAjustes(object):
         self.leDirecSelec.setStatusTip(QCoreApplication.translate("EasyAjustes", u"Directorio seleccionado para guardar el ajuste.", None))
 #endif // QT_CONFIG(statustip)
         self.leDirecSelec.setPlaceholderText(QCoreApplication.translate("EasyAjustes", u"Ning\u00fan directorio a\u00fan.", None))
+        self.lbDestino.setText(QCoreApplication.translate("EasyAjustes", u"Carpeta destino", None))
         self.lbDetalles.setText(QCoreApplication.translate("EasyAjustes", u"Descripci\u00f3n y Detalles", None))
 #if QT_CONFIG(statustip)
         self.teDetalles.setStatusTip(QCoreApplication.translate("EasyAjustes", u"Para qu\u00e9 CAT est\u00e1 dirigido y detalles adicionales.", None))

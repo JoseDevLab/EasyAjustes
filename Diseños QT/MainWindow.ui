@@ -876,7 +876,7 @@ Editar Paths</string>
                     <property name="frameShadow">
                      <enum>QFrame::Shadow::Raised</enum>
                     </property>
-                    <layout class="QGridLayout" name="gridLayout_2">
+                    <layout class="QGridLayout" name="gridLayout_2" columnstretch="1,0,0">
                      <property name="topMargin">
                       <number>4</number>
                      </property>
@@ -937,27 +937,17 @@ carpeta</string>
                     <property name="frameShadow">
                      <enum>QFrame::Shadow::Raised</enum>
                     </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_5">
-                     <property name="spacing">
-                      <number>4</number>
-                     </property>
+                    <layout class="QGridLayout" name="gridLayout_4" columnstretch="1,0,0">
                      <property name="topMargin">
                       <number>4</number>
                      </property>
                      <property name="bottomMargin">
                       <number>4</number>
                      </property>
-                     <item>
-                      <widget class="QLabel" name="lbDestino">
-                       <property name="text">
-                        <string>Carpeta destino</string>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignmentFlag::AlignCenter</set>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
+                     <property name="verticalSpacing">
+                      <number>2</number>
+                     </property>
+                     <item row="1" column="0">
                       <widget class="QPushButton" name="btSelecDest">
                        <property name="statusTip">
                         <string>Seleccionar dónde guardar el ajuste.</string>
@@ -967,7 +957,71 @@ carpeta</string>
                        </property>
                       </widget>
                      </item>
-                     <item>
+                     <item row="1" column="1">
+                      <widget class="QCheckBox" name="chbComprimir">
+                       <property name="text">
+                        <string>Comprimir
+carpeta</string>
+                       </property>
+                       <property name="checked">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="2">
+                      <widget class="QComboBox" name="cbFormato">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>110</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>50</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="toolTip">
+                        <string>Formato</string>
+                       </property>
+                       <property name="statusTip">
+                        <string>Formato a comprimir.</string>
+                       </property>
+                       <item>
+                        <property name="text">
+                         <string>ZIP (.zip)</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>TAR (.tar)</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>GZIP (.tar.gz)</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>BZIP2 (.tar.bz2)</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>XZ (.tar.xz)</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                     <item row="2" column="0" colspan="3">
                       <widget class="QLineEdit" name="leDirecSelec">
                        <property name="toolTip">
                         <string>Directorio seleccionado.</string>
@@ -980,6 +1034,16 @@ carpeta</string>
                        </property>
                        <property name="placeholderText">
                         <string>Ningún directorio aún.</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="0" colspan="3">
+                      <widget class="QLabel" name="lbDestino">
+                       <property name="text">
+                        <string>Carpeta destino</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignmentFlag::AlignCenter</set>
                        </property>
                       </widget>
                      </item>

@@ -37,6 +37,20 @@ class CrearAjuste(QThread):
         nomAjuste = f'AJ{numeracion:03}_{fecha}_{hora}_{sigla}'
 
         dirDestino = f'{dirDestino}/{nomAjuste}'
+        
+        comprimir = self.mw.chbComprimir.isChecked()
+        formato = self.mw.cbFormato.currentIndex()
+        if formato == 0:
+            ext = 'zip' # .zip
+        elif formato == 1:
+            ext = 'tar' # .tar
+        elif formato == 2:
+            ext = 'gztar' # .tar.gz
+        elif formato == 3:
+            ext = 'bztar' # .tar.bz2
+        else:
+            ext = 'xztar' # .tar.xz
+        
         if incluirCarp:
             dirDestino1 = f'{dirDestino}/{carpIni}'
         else:
@@ -132,6 +146,9 @@ class CrearAjuste(QThread):
                 path['copiado'] = False
                 path['mensaje'] = f'Error: {e}'
             lisPaths[i] = path
+        if comprimir:
+            self.update_textProgress.emit(f'Comprimiendo archivos ...')
+            shutil.make_archive(dirDestino, ext, dirDestino)
         self.mw.listaPaths = lisPaths
         self.finalized.emit()
         
