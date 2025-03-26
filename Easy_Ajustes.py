@@ -1,3 +1,4 @@
+import os
 import sys
 import json
 import subprocess
@@ -73,7 +74,28 @@ class EasyAjustes(QMainWindow, Ui_EasyAjustes):
         self.actionLimpiar_historial.triggered.connect(self.limpiarHistorial)
         self.actionSalir.triggered.connect(lambda:self.close())
         
-        self.config = self.leer_json('_internal/data/config.json')
+        # Determinar la ruta base
+        if getattr(sys, 'frozen', False):
+            # Si está empaquetada
+            if sys.platform == 'darwin':  # macOS
+                # En macOS, la ruta base es diferente
+                bundle_dir = os.path.abspath(os.path.dirname(sys.executable))
+                #QMessageBox.information(self, "Ruta base", f"bundle_dir: {bundle_dir}")
+                if '.app' in bundle_dir:
+                    # Si estamos dentro del .app, subimos hasta la raíz
+                    app_dir = os.path.abspath(os.path.join(bundle_dir, '..', '..'))
+                    bundle_dir = os.path.abspath(os.path.join(bundle_dir, '..', '..', '..'))
+                    baseNameApp = os.path.basename(app_dir).split('.')[0]
+                    #QMessageBox.information(self, "Ruta base", f"bundle_dir: {bundle_dir}\napp_dir: {app_dir}\nbaseNameApp: {baseNameApp}")
+                self.dataPath = os.path.join(bundle_dir, baseNameApp ,'_internal/data')
+                #QMessageBox.information(self, "Ruta base", f"dataPath: {self.dataPath}")
+            else:
+                # Para Windows y Linux
+                self.dataPath = os.path.join(sys._MEIPASS, '_internal/data').replace('\\', '/')
+        else:
+            # Si está en desarrollo, usar ruta relativa
+            self.dataPath = '_internal/data'
+        self.config = self.leer_json(f'{self.dataPath}/config.json')
         
         if 'siglas' in self.config and type(self.config['siglas'])==list and len(self.config['siglas'])>0:
             self.leSigla.setVisible(False)
@@ -96,7 +118,7 @@ class EasyAjustes(QMainWindow, Ui_EasyAjustes):
                 self.ultimoPathArchivo = self.config['ultimoPathArchivo']
             else:
                 self.config.update({'ultimoPathArchivo': self.ultimoPathArchivo})
-                self.escribir_json('_internal/data/config.json',self.config)
+                self.escribir_json(f'{self.dataPath}/config.json',self.config)
                 
         self.ultimoPathBusqueda = QStandardPaths.writableLocation(QStandardPaths.DocumentsLocation)
         if 'ultimoPathBusqueda' in self.config and type(self.config['ultimoPathBusqueda'])==str and self.config['ultimoPathBusqueda']!='':
@@ -105,7 +127,7 @@ class EasyAjustes(QMainWindow, Ui_EasyAjustes):
                 self.ultimoPathBusqueda = self.config['ultimoPathBusqueda']
             else:
                 self.config.update({'ultimoPathBusqueda': self.ultimoPathBusqueda})
-                self.escribir_json('_internal/data/config.json',self.config)
+                self.escribir_json(f'{self.dataPath}/config.json',self.config)
             
         self.ultimoPathDestino = QStandardPaths.writableLocation(QStandardPaths.DocumentsLocation)
         if 'ultimoPathDestino' in self.config and type(self.config['ultimoPathDestino'])==str and self.config['ultimoPathDestino']!='':
@@ -114,11 +136,11 @@ class EasyAjustes(QMainWindow, Ui_EasyAjustes):
                 self.ultimoPathDestino = self.config['ultimoPathDestino']
             else:
                 self.config.update({'ultimoPathDestino': self.ultimoPathDestino})
-                self.escribir_json('_internal/data/config.json',self.config)
+                self.escribir_json(f'{self.dataPath}/config.json',self.config)
         self.leDirecSelec.setText(self.ultimoPathDestino)
         
         self.historial = []
-        hisJson = self.leer_json('_internal/data/historial.json')
+        hisJson = self.leer_json(f'{self.dataPath}/historial.json')
         if 'historial' in hisJson and type(hisJson['historial'])==list and len(hisJson['historial'])>0:
             self.historial = hisJson['historial']
         self.cargarMenuHistorial()
@@ -131,8 +153,10 @@ class EasyAjustes(QMainWindow, Ui_EasyAjustes):
                 datos = json.load(archivo)
         except FileNotFoundError:
             print(f"El archivo {ruta_archivo} no se encontró.")
+            QMessageBox.critical(self, "Error", f"El archivo {ruta_archivo} no se encontró.\nAsegurese de no haberlo eliminado.")
         except json.JSONDecodeError:
-            print(f"Error al decodificar el archivo JSON {ruta_archivo}.")
+            QMessageBox.critical(self, "Error", f"Error al decodificar el archivo JSON {ruta_archivo}.")
+            print(f"Error al decodificar el archivo JSON {ruta_archivo}.\nVerifique que el archivo tenga el formato correcto.")
         return datos
             
     def escribir_json(self,ruta_archivo:str, datos:dict):
@@ -396,9 +420,9 @@ class EasyAjustes(QMainWindow, Ui_EasyAjustes):
             'ultimoPathDestino':self.ultimoPathDestino
         }
         self.config.update(upConfig)
-        self.escribir_json('_internal/data/config.json',self.config)
+        self.escribir_json(f'{self.dataPath}/config.json',self.config)
         self.historial.insert(0,registroAjuste)
-        self.escribir_json('_internal/data/historial.json',{'historial':self.historial})
+        self.escribir_json(f'{self.dataPath}/historial.json',{'historial':self.historial})
         self.cargarMenuHistorial()
 
     def nuevoAjuste(self):
@@ -518,7 +542,7 @@ class EasyAjustes(QMainWindow, Ui_EasyAjustes):
         
     def limpiarHistorial(self):
         self.historial = []
-        self.escribir_json('_internal/data/historial.json',{'historial':self.historial})
+        self.escribir_json(f'{self.dataPath}/historial.json',{'historial':self.historial})
         self.cargarMenuHistorial()
 
     def abrir(self, folder_path):
@@ -527,7 +551,7 @@ class EasyAjustes(QMainWindow, Ui_EasyAjustes):
             if not Path(folder_path).exists():
                 raise FileNotFoundError('La carpeta ya no existe.')
             if sys.platform.startswith('win'):
-                subprocess.Popen(f'explorer "{folder_path.replace("/","\\")}"')
+                subprocess.Popen(f'explorer "{os.path.normpath(folder_path)}"')
             elif sys.platform == 'darwin':
                 subprocess.Popen(['open', folder_path])
             elif sys.platform.startswith('linux'):

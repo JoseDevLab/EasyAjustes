@@ -7,7 +7,7 @@
   },
   {
    "optionDest": "filenames",
-   "value": "D:/Users/jolev/OneDrive - Universidad de Pamplona/Trabajo/CIADTI/Easy Ajustes/Easy_Ajustes.py"
+   "value": "/Users/joseleonardovillamizarreyes/Library/CloudStorage/OneDrive-UniversidaddePamplona/Trabajo/CIADTI/Easy_Ajustes/Co\u0301digo_fuente/Easy_Ajustes.py"
   },
   {
    "optionDest": "onefile",
@@ -19,11 +19,11 @@
   },
   {
    "optionDest": "icon_file",
-   "value": "D:/Users/jolev/OneDrive - Universidad de Pamplona/Trabajo/CIADTI/Easy Ajustes/resources/images/icono.ico"
+   "value": "/Users/joseleonardovillamizarreyes/Library/CloudStorage/OneDrive-UniversidaddePamplona/Trabajo/CIADTI/Easy_Ajustes/Co\u0301digo_fuente/resources/images/icono.ico"
   },
   {
    "optionDest": "name",
-   "value": "Easy Ajustes"
+   "value": "Easy_Ajustes"
   },
   {
    "optionDest": "clean_build",
@@ -43,7 +43,7 @@
   },
   {
    "optionDest": "version_file",
-   "value": "D:/Users/jolev/OneDrive - Universidad de Pamplona/Trabajo/CIADTI/Easy Ajustes/version_info.txt"
+   "value": "/Users/joseleonardovillamizarreyes/Library/CloudStorage/OneDrive-UniversidaddePamplona/Trabajo/CIADTI/Easy_Ajustes/Co\u0301digo_fuente/version_info.txt"
   },
   {
    "optionDest": "uac_admin",
@@ -63,7 +63,11 @@
   },
   {
    "optionDest": "datas",
-   "value": "D:/Users/jolev/OneDrive - Universidad de Pamplona/Trabajo/CIADTI/Easy Ajustes/_internal/data;data/"
+   "value": "/Users/joseleonardovillamizarreyes/Library/CloudStorage/OneDrive-UniversidaddePamplona/Trabajo/CIADTI/Easy_Ajustes/Co\u0301digo_fuente/_internal/data/config.json:./data"
+  },
+  {
+   "optionDest": "datas",
+   "value": "/Users/joseleonardovillamizarreyes/Library/CloudStorage/OneDrive-UniversidaddePamplona/Trabajo/CIADTI/Easy_Ajustes/Co\u0301digo_fuente/_internal/data/historial.json:./data"
   }
  ],
  "nonPyinstallerOptions": {

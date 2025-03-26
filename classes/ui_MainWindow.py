@@ -267,8 +267,8 @@ class Ui_EasyAjustes(object):
 
         self.leSigla = QLineEdit(self.frame_2)
         self.leSigla.setObjectName(u"leSigla")
-        self.leSigla.setMinimumSize(QSize(50, 0))
-        self.leSigla.setMaximumSize(QSize(50, 16777215))
+        self.leSigla.setMinimumSize(QSize(60, 0))
+        self.leSigla.setMaximumSize(QSize(60, 16777215))
         self.leSigla.setMaxLength(3)
         self.leSigla.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.leSigla.setClearButtonEnabled(False)
@@ -283,8 +283,8 @@ class Ui_EasyAjustes(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.cbSiglas.sizePolicy().hasHeightForWidth())
         self.cbSiglas.setSizePolicy(sizePolicy)
-        self.cbSiglas.setMinimumSize(QSize(50, 0))
-        self.cbSiglas.setMaximumSize(QSize(50, 16777215))
+        self.cbSiglas.setMinimumSize(QSize(60, 0))
+        self.cbSiglas.setMaximumSize(QSize(60, 16777215))
 
         self.horizontalLayout.addWidget(self.cbSiglas)
 

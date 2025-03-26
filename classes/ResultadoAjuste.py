@@ -1,3 +1,4 @@
+import os
 import subprocess
 import sys
 from PySide6.QtWidgets import QWidget
@@ -54,7 +55,7 @@ class ResultadoAjuste(QWidget, Ui_resultadoAjuste):
         folder_path = QFileInfo(self.lePathDestino.text()).path()
         if sys.platform.startswith('win'):
             # Para Windows
-            subprocess.Popen(f'explorer "{folder_path.replace('/','\\')}"')
+            subprocess.Popen(f'explorer "{os.path.normpath(folder_path)}"')
         elif sys.platform == 'darwin':
             # Para macOS
             subprocess.Popen(['open', folder_path])
